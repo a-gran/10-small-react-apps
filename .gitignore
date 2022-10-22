@@ -1,0 +1,15 @@
+.vscode/
+.idea/
+.git/
+
+node_modules/
+
+archive/
+ref/
+
+default.json
+
+info.md
+
+*zip
+*pdf
