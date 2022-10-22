@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      id: 0,
+      word: "",
+      translate: "",
+      cards: []
+    }
+  }
+
+  render() {
+    return (
+      <div className='App'>
+        <h1 className='app-title'>Карточки английских слов</h1>
+        <div className='container'>
+          <input
+            type='text'
+            placeholder='Введите слово'
+            value={this.state.word}
+            onChange={(e) => this.updateInput('word', e.target.value)}
+          />
+          <input
+            type='text'
+            placeholder='Введите слово'
+            value={this.state.translate}
+            onChange={(e) => this.updateInput('translate', e.target.value)}
+          />
+        </div>
+      </div >
+    );
+  }
 }
 
 export default App;
